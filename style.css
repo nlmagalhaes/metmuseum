@@ -93,36 +93,35 @@ nav ul li a:hover {
   margin-bottom: 30px;
 }
 
-/* CARROSSEL: wrapper (visível para botões) e container (clipa os cards) */
+/* CARROSSEL */
 .carousel-wrapper {
   position: relative;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  overflow: visible; /* permite que botões fiquem fora da área */
+  overflow: visible;
 }
 
 .carousel-container {
-  overflow: hidden;   /* esconde as partes dos cards fora da viewport */
+  overflow: hidden;
   padding: 10px 0;
 }
 
-/* track permite scroll e arrastar */
 .carousel-track {
   display: flex;
   gap: 30px;
   padding: 6px 20px;
-  overflow-x: auto;            /* permite toque/arraste */
+  overflow-x: auto;
   scroll-behavior: smooth;
-  -ms-overflow-style: none;    /* IE/Edge */
-  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.carousel-track::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+.carousel-track::-webkit-scrollbar { display: none; }
 
 /* Card */
 .card {
-  min-width: 300px; /* base para cálculo em JS */
-  flex: 0 0 auto;   /* não encolhe */
+  min-width: 300px;
+  flex: 0 0 auto;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -149,10 +148,9 @@ nav ul li a:hover {
   padding: 0 15px 16px;
 }
 
-/* hover */
 .card:hover { transform: translateY(-6px); }
 
-/* Botões (fora da área clipada) */
+/* Botões */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -172,11 +170,11 @@ nav ul li a:hover {
 }
 
 .carousel-btn.left {
-  left: -46px;   /* afastadas da área do carrossel */
+  left: -46px;
 }
 
 .carousel-btn.right {
-  right: -46px;  /* afastadas da área do carrossel */
+  right: -46px;
 }
 
 .carousel-btn:hover {
@@ -189,8 +187,8 @@ footer {
   text-align: center;
   padding: 20px 10px;
   font-size: 14px;
-  color: #ffffff;             /* texto branco para contraste */
-  border-top: 1px solid #081a31; /* tom ainda mais escuro para separar */
+  color: #ffffff;
+  border-top: 1px solid #081a31;
 }
 
 /* Responsividade */
@@ -204,6 +202,6 @@ footer {
   header { padding: 12px 16px; }
   .hero-text h1 { font-size: 28px; }
   .hero { height: 40vh; }
-  .carousel-btn { display: none; } /* no mobile escondemos as setas (o arraste funciona) */
-  .card { min-width: 86%; margin-left: 7%; margin-right: 7%; } /* card centralizado no mobile */
+  .carousel-btn { display: none; }
+  .card { min-width: 86%; margin-left: 7%; margin-right: 7%; }
 }
