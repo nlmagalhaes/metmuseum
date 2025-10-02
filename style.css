@@ -1,153 +1,142 @@
-/* Fonte principal */
-body {
+/* Reset básico */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fff;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #fafafa;
   color: #333;
 }
 
 /* Header */
 header {
-  background-color: #c8102e; /* vermelho do Met */
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 50px;
-}
-
-header .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-header nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* Hero */
-.hero {
-  background: url("images/hero.jpg") center/cover no-repeat;
-  color: white;
+  background: #0a1a3f;
+  color: #fff;
   text-align: center;
-  padding: 100px 20px;
+  padding: 2rem 1rem;
 }
 
-.hero h1 {
+header .met-title {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
-.hero p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.2rem;
+/* Main */
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-/* Exposições */
-.exposicoes {
-  padding: 60px 40px;
+/* Seção Chat */
+#chat {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 3rem;
 }
 
-.exposicoes h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+#chat h2 {
+  margin-bottom: 1rem;
+  color: #0a1a3f;
 }
 
-.carousel-wrapper {
-  position: relative;
+#chat-box {
+  background: #f4f4f4;
+  height: 250px;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  overflow-y: auto;
+  font-size: 0.95rem;
 }
 
-.carousel-container {
-  overflow: hidden;
+#user-input {
+  width: 75%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-right: 0.5rem;
+  font-size: 1rem;
 }
 
-.carousel-track {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.3s ease;
-}
-
-.card {
-  min-width: 250px;
-  background: #f8f8f8;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 40%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
-  color: white;
+#send-btn {
+  padding: 0.8rem 1.2rem;
+  background: #0a1a3f;
+  color: #fff;
   border: none;
-  font-size: 2rem;
+  border-radius: 6px;
   cursor: pointer;
-  padding: 10px;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
-.carousel-btn.left { left: 10px; }
-.carousel-btn.right { right: 10px; }
+#send-btn:hover {
+  background: #1c2d63;
+}
 
-/* Locais */
+/* Seção Locations */
 #locations {
-  padding: 60px 40px;
-  background: #fafafa;
+  margin-top: 2rem;
 }
 
 #locations h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 1.5rem;
+  color: #0a1a3f;
+  text-align: center;
 }
 
 .location {
-  display: inline-block;
-  width: 45%;
-  margin: 2%;
-  vertical-align: top;
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 .location img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 .location h3 {
-  margin-top: 0;
-  font-size: 1.5rem;
-  color: #c8102e;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #0a1a3f;
+}
+
+.location p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
 }
 
 /* Footer */
 footer {
-  background: #222;
-  color: #ccc;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  background: #0a1a3f;
+  color: #fff;
+  font-size: 0.9rem;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #user-input {
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+
+  #send-btn {
+    width: 100%;
+  }
 }
