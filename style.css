@@ -183,6 +183,16 @@ nav ul li a:hover {
   background: rgba(0,0,0,0.75);
 }
 
+/* Footer */
+footer {
+  background-color: #0a2342;   /* azul escuro elegante */
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+  color: #ffffff;             /* texto branco para contraste */
+  border-top: 1px solid #081a31; /* tom ainda mais escuro para separar */
+}
+
 /* Responsividade */
 @media (max-width: 1000px) {
   .carousel-btn.left { left: -38px; }
