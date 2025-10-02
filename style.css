@@ -43,18 +43,18 @@ nav ul li a:hover {
 
 /* Hero */
 .hero {
-  position: relative; /* necessário para limitar o overlay */
+  position: relative;
   background-image: url("images/hero-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 60vh;   /* altura do hero */
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
-  overflow: hidden; /* impede que o overlay ultrapasse */
+  overflow: hidden;
 }
 
 .hero::after {
@@ -63,13 +63,13 @@ nav ul li a:hover {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0; /* cobre só a área do hero */
-  background: rgba(0,0,0,0.4); /* overlay escuro */
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
   z-index: 0;
 }
 
 .hero-text {
-  position: relative; /* texto acima do overlay */
+  position: relative;
   z-index: 1;
   max-width: 700px;
   color: white;
@@ -96,20 +96,27 @@ nav ul li a:hover {
   margin-bottom: 40px;
 }
 
-.cards {
+/* Carrossel */
+.carousel-container {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-track {
   display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  transition: transform 0.5s ease-in-out;
 }
 
 .card {
-  width: 300px;
+  min-width: 300px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
+  margin: 0 15px;
 }
 
 .card img {
@@ -119,20 +126,41 @@ nav ul li a:hover {
 }
 
 .card h3 {
-  padding: 15px 15px 5px;
+  padding: 15px;
   font-size: 18px;
   color: #333;
 }
 
-.data-expo {
+.card .data-expo {
   font-size: 14px;
-  color: #777;
+  color: #666;
   margin-bottom: 15px;
 }
 
-/* Efeito hover */
 .card:hover {
   transform: translateY(-8px);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
 }
 
 /* Footer */
