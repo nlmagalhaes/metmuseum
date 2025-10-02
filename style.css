@@ -99,8 +99,9 @@ nav ul li a:hover {
 /* Carrossel */
 .carousel-container {
   position: relative;
+  width: 100%;
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
   overflow: hidden;
 }
 
@@ -111,12 +112,12 @@ nav ul li a:hover {
 
 .card {
   min-width: 300px;
+  margin: 0 15px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
-  margin: 0 15px;
 }
 
 .card img {
@@ -126,41 +127,46 @@ nav ul li a:hover {
 }
 
 .card h3 {
-  padding: 15px;
+  padding: 15px 15px 5px;
   font-size: 18px;
   color: #333;
 }
 
-.card .data-expo {
+.card .date {
   font-size: 14px;
-  color: #666;
-  margin-bottom: 15px;
+  color: #777;
+  padding: 0 15px 15px;
 }
 
 .card:hover {
   transform: translateY(-8px);
 }
 
+/* Botões do carrossel */
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background: rgba(0,0,0,0.5);
   border: none;
-  color: white;
+  color: #fff;
   font-size: 24px;
+  padding: 10px 15px;
   cursor: pointer;
-  padding: 10px;
   border-radius: 50%;
   z-index: 2;
 }
 
-.carousel-btn.prev {
+.carousel-btn.left {
   left: 10px;
 }
 
-.carousel-btn.next {
+.carousel-btn.right {
   right: 10px;
+}
+
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.7);
 }
 
 /* Footer */
