@@ -3,121 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Athena Culture - Museu</title>
-
-  <!-- Fonte apenas para o título -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
+  <title>Met Museum - Chat</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <div class="logo">Athena Culture</div>
-    <nav>
-      <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Coleções & Obras</a></li>
-        <li><a href="#">Agenda Cultural</a></li>
-        <li><a href="#">Área do Visitante</a></li>
-      </ul>
-    </nav>
+    <h1 class="met-title">Bem Vindo(a) ao Met Museum</h1>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1 class="hero-title">Bem Vindo(a) ao Met Museum</h1>
-      <p>Descubra o mundo das artes com Athena! Explore coleções, eventos e exposições do Met Museum de forma interativa e personalizada.</p>
-    </div>
-  </section>
+  <main>
+    <section id="chat">
+      <h2>Fale Conosco</h2>
+      <div id="chat-box"></div>
+      <input type="text" id="user-input" placeholder="Digite sua mensagem...">
+      <button id="send-btn">Enviar</button>
+    </section>
 
-  <!-- Exposições -->
-  <section class="exposicoes">
-    <h2>Agora em Exibição</h2>
-
-    <div class="carousel-wrapper">
-      <button class="carousel-btn left">&#10094;</button>
-      <div class="carousel-container">
-        <div class="carousel-track">
-          
-          <!-- Card 1 -->
-          <div class="card">
-            <img src="images/expo1.png" alt="Jennie C. Jones Ensemble">
-            <h3>Jennie C. Jones Ensemble</h3>
-            <p class="data-expo">Até 19 de outubro</p>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="card">
-            <img src="images/expo2.png" alt="Superfine: Tailoring Black Style">
-            <h3>Superfine: Tailoring Black Style</h3>
-            <p class="data-expo">Até 26 de outubro</p>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="card">
-            <img src="images/expo3.png" alt="Espírito da Criatividade">
-            <h3>Espírito da Criatividade</h3>
-            <p class="data-expo">Até 19 de outubro</p>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="card">
-            <img src="images/expo4.png" alt="Exposição 4">
-            <h3>Love Stories</h3>
-            <p class="data-expo">Até 30 de outubro</p>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="card">
-            <img src="images/expo5.png" alt="Exposição 5">
-            <h3>Histórias da Arte</h3>
-            <p class="data-expo">Até 12 de novembro</p>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="card">
-            <img src="images/expo6.png" alt="Exposição 6">
-            <h3>Modernismo em Foco</h3>
-            <p class="data-expo">Até 20 de novembro</p>
-          </div>
-
-        </div>
+    <section id="locations">
+      <h2>Nossos Locais</h2>
+      <div class="location">
+        <img src="images/met-fifth.jpg" alt="The Met Fifth Avenue">
+        <h3>The Met Fifth Avenue</h3>
+        <p><strong>Horário:</strong> 10h – 17h (Terça a Domingo)</p>
+        <p><strong>Endereço:</strong> 1000 Fifth Avenue, Nova York, NY 10028</p>
       </div>
-      <button class="carousel-btn right">&#10095;</button>
-    </div>
-  </section>
+      <div class="location">
+        <img src="images/met-cloisters.jpg" alt="The Met Cloisters">
+        <h3>The Met Cloisters</h3>
+        <p><strong>Horário:</strong> 10h – 17h (Quinta a Terça)</p>
+        <p><strong>Endereço:</strong> 99 Margaret Corbin Drive, Fort Tryon Park, Nova York, NY 10040</p>
+      </div>
+    </section>
+  </main>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Athena Culture | Todos os direitos reservados</p>
-
-    <!-- Embedded Messaging atualizado -->
-    <script type='text/javascript'>
-      function initEmbeddedMessaging() {
-        try {
-          embeddedservice_bootstrap.settings.language = 'en_US';
-          embeddedservice_bootstrap.init(
-            '00DKY00000NRyu9',
-            'Met_Museum_Site',
-            'https://trailsignup-0947c9037edb1f.my.site.com/ESWMetMuseumSite1759374486831',
-            {
-              scrt2URL: 'https://trailsignup-0947c9037edb1f.my.salesforce-scrt.com'
-            }
-          );
-        } catch (err) {
-          console.error('Error loading Embedded Messaging: ', err);
-        }
-      };
-    </script>
-    <script type='text/javascript' src='https://trailsignup-0947c9037edb1f.my.site.com/ESWMetMuseumSite1759374486831/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+    <p>© 2025 Athena Culture | Todos os direitos reservados</p>
   </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
 
   <script src="script.js"></script>
 </body>
