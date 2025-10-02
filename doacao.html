@@ -5,15 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Doe para o Met — Athena Culture</title>
 
-  <!-- Fonte para título (opcional) -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ===== Reset & base ===== */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: "Helvetica Neue", Arial, sans-serif; color: #222; background:#fafafa; line-height:1.5; }
 
-    /* ===== Header (mesma aparência do site) ===== */
     header {
       display:flex;
       justify-content:space-between;
@@ -30,7 +27,6 @@
     nav ul li a { color:#fff; text-decoration:none; font-weight:500; }
     nav ul li a:hover { color:#ffd700; }
 
-    /* ===== Container principal ===== */
     main.container { max-width:1100px; margin:36px auto; padding: 0 20px; }
 
     .donation-hero {
@@ -44,10 +40,7 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.06);
     }
 
-    .donation-text {
-      flex:1;
-      padding-right: 10px;
-    }
+    .donation-text { flex:1; padding-right: 10px; }
     .donation-text h1 { font-family: 'Playfair Display', serif; font-size: 34px; margin-bottom:12px; color:#0a1a3f; }
     .donation-text p { color:#444; margin-bottom:10px; }
 
@@ -76,12 +69,7 @@
 
     .custom-input { width:100%; padding:10px; border:1px solid #ddd; border-radius:6px; margin-top:10px; }
 
-    .donate-action {
-      margin-top:14px;
-      display:flex;
-      gap:8px;
-      justify-content:center;
-    }
+    .donate-action { margin-top:14px; display:flex; gap:8px; justify-content:center; }
     .btn-primary {
       background: #c8102e;
       color:#fff;
@@ -93,7 +81,6 @@
     }
     .btn-outline { background:#fff; border:1px solid #ccc; padding:10px 14px; border-radius:8px; cursor:pointer; }
 
-    /* ===== Modal de pagamento (overlay) ===== */
     .overlay {
       position: fixed;
       inset: 0;
@@ -114,6 +101,7 @@
       padding: 18px;
       box-shadow: 0 16px 40px rgba(0,0,0,0.35);
       position: relative;
+      text-align:left;
     }
     .modal h3 { margin-bottom:8px; color:#222; }
     .modal p.small { color:#666; margin-bottom:12px; font-size:0.95rem; }
@@ -137,7 +125,32 @@
 
     .note { font-size:0.9rem; color:#666; margin-top:8px; text-align:left; }
 
-    /* Small screens */
+    /* === modal de mensagem custom === */
+    .message-box {
+      width: 100%;
+      max-width: 400px;
+      background: #fff;
+      padding: 22px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .message-box h2 {
+      margin-bottom: 10px;
+      color: #8B0000;
+    }
+    .message-box p { margin-bottom: 16px; color:#333; }
+    .message-box button {
+      background:#c8102e;
+      color:#fff;
+      border:none;
+      padding:10px 18px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+    }
+
     @media (max-width:720px){
       .donation-hero { flex-direction: column; }
       .donation-panel { width: 100%; }
@@ -146,8 +159,6 @@
   </style>
 </head>
 <body>
-
-  <!-- header (mesma aparência) -->
   <header>
     <div class="logo">Athena Culture</div>
     <nav>
@@ -160,17 +171,15 @@
   </header>
 
   <main class="container">
-    <section class="donation-hero" aria-labelledby="doe-title">
+    <section class="donation-hero">
       <div class="donation-text">
-        <h1 id="doe-title">Doe para o Met</h1>
-        <p>Seu apoio ajuda a manter o extraordinário nível de programação, conservação e pesquisa do Museu, permitindo que milhões de visitantes vivenciem o poder da arte.
-           Sua doação hoje desempenha um papel vital no futuro do Met, e não poderíamos ser mais gratos. Obrigado.</p>
+        <h1>Doe para o Met</h1>
+        <p>Seu apoio ajuda a manter o extraordinário nível de programação, conservação e pesquisa do Museu, permitindo que milhões de visitantes vivenciem o poder da arte.</p>
         <p>Você será direcionado para preencher os dados do cartão em um formulário seguro.</p>
       </div>
 
-      <aside class="donation-panel" aria-label="Painel de doação">
+      <aside class="donation-panel">
         <div style="font-size:0.95rem; color:#333; margin-bottom:8px;">Valores sugeridos</div>
-
         <div class="values" id="values">
           <button class="value-btn" data-value="5">R$ 5</button>
           <button class="value-btn" data-value="10">R$ 10</button>
@@ -178,14 +187,11 @@
           <button class="value-btn" data-value="50">R$ 50</button>
           <button class="value-btn" data-value="100">R$ 100</button>
         </div>
-
         <input class="custom-input" id="customValue" type="number" min="1" placeholder="Outro valor (R$)" />
-
         <div class="donate-action">
           <button class="btn-outline" id="previewBtn">Ver resumo</button>
           <button class="btn-primary" id="openPayBtn">Doar agora</button>
         </div>
-
         <div style="margin-top:10px; font-size:0.9rem; color:#666;">
           <input type="checkbox" id="coverFee" /> <label for="coverFee">Cobrir taxa de transação</label>
         </div>
@@ -193,136 +199,92 @@
     </section>
   </main>
 
-  <!-- Modal de pagamento -->
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="close-x" id="closeModal" title="Fechar">✕</div>
-      <h3 id="modalTitle">Informações de pagamento</h3>
+  <!-- Modal pagamento -->
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <div class="close-x" id="closeModal">✕</div>
+      <h3>Informações de pagamento</h3>
       <p class="small">Insira abaixo os dados do seu cartão.</p>
-
-      <div class="form-row">
-        <input id="cardNumber" placeholder="Número do cartão" type="text" inputmode="numeric" maxlength="19">
-      </div>
-
+      <div class="form-row"><input id="cardNumber" placeholder="Número do cartão" maxlength="19"></div>
       <div class="form-row">
         <input id="expiry" placeholder="MM/AA" maxlength="5">
         <input id="cvc" placeholder="CVC" maxlength="4" style="max-width:120px;">
       </div>
-
-      <div class="form-row">
-        <input id="nameOnCard" placeholder="Nome no cartão">
-      </div>
-
+      <div class="form-row"><input id="nameOnCard" placeholder="Nome no cartão"></div>
       <div class="note" id="amountNote">Total: R$ 25</div>
-
       <button class="pay-btn" id="payBtn">Pague R$ 25</button>
-      <div class="note">* Antes de prosseguir, verifique se os dados inseridos correspondem aos do seu cartão.</div>
+    </div>
+  </div>
+
+  <!-- Modal de mensagem custom -->
+  <div class="overlay" id="msgOverlay">
+    <div class="message-box">
+      <h2>MetMuseum.Athena</h2>
+      <p id="msgText"></p>
+      <button id="msgOkBtn">OK</button>
     </div>
   </div>
 
   <script>
-    // ===== utilities =====
-    function q(sel){ return document.querySelector(sel); }
-    function qa(sel){ return Array.from(document.querySelectorAll(sel)); }
+    const q = s => document.querySelector(s);
+    const qa = s => [...document.querySelectorAll(s)];
 
-    // ===== valores e seleção =====
     let selectedValue = 25;
-    const valuesWrap = q('#values');
-    const valueBtns = qa('.value-btn');
     const customInput = q('#customValue');
+    const valueBtns = qa('.value-btn');
     const coverFee = q('#coverFee');
 
     function updateSelected(v){
-      valueBtns.forEach(b => b.classList.toggle('selected', Number(b.dataset.value) === Number(v)));
-      selectedValue = Number(v);
-      customInput.value = '';
+      valueBtns.forEach(b => b.classList.toggle('selected', +b.dataset.value === +v));
+      selectedValue = +v; customInput.value='';
       updateAmountTexts();
     }
-
-    valueBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        updateSelected(btn.dataset.value);
-      });
-    });
-
-    customInput.addEventListener('input', () => {
-      const v = Number(customInput.value);
-      if (v > 0) {
-        valueBtns.forEach(b => b.classList.remove('selected'));
-        selectedValue = v;
-        updateAmountTexts();
-      }
-    });
+    valueBtns.forEach(btn => btn.onclick = ()=>updateSelected(btn.dataset.value));
+    customInput.oninput = ()=>{ if(+customInput.value>0){ valueBtns.forEach(b=>b.classList.remove('selected')); selectedValue=+customInput.value; updateAmountTexts(); }};
 
     function computeTotal(){
-      let total = Number(selectedValue || 0);
-      if (coverFee.checked) {
-        // simula taxa de ~3.5% + R$ 0,60 (exemplo)
-        total = Math.round((total * 1.035 + 0.6) * 100) / 100;
-      }
-      return total;
+      let t = +selectedValue;
+      if(coverFee.checked){ t=Math.round((t*1.035+0.6)*100)/100; }
+      return t;
     }
-
     function updateAmountTexts(){
-      const total = computeTotal();
-      q('#amountNote').textContent = `Total: R$ ${total.toFixed(2).replace('.',',')}`;
-      q('#payBtn').textContent = `Pague R$ ${total.toFixed(2).replace('.',',')}`;
+      let total=computeTotal();
+      q('#amountNote').textContent=`Total: R$ ${total.toFixed(2).replace('.',',')}`;
+      q('#payBtn').textContent=`Pague R$ ${total.toFixed(2).replace('.',',')}`;
     }
 
-    // ===== modal =====
-    const overlay = q('#overlay');
-    const openBtn = q('#openPayBtn');
-    const closeModal = q('#closeModal');
-    const payBtn = q('#payBtn');
+    const overlay=q('#overlay'), payBtn=q('#payBtn');
+    q('#openPayBtn').onclick=()=>{ updateAmountTexts(); overlay.classList.add('open'); q('#cardNumber').focus(); };
+    q('#closeModal').onclick=()=>overlay.classList.remove('open');
 
-    openBtn.addEventListener('click', () => {
-      updateAmountTexts();
-      overlay.classList.add('open');
-      overlay.setAttribute('aria-hidden', 'false');
-      q('#cardNumber').focus();
-    });
-    closeModal.addEventListener('click', closeOverlay);
-    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeOverlay(); });
-    document.addEventListener('keydown', (e)=> { if (e.key === 'Escape') closeOverlay(); });
+    payBtn.onclick=()=>{
+      const card=q('#cardNumber').value.trim(), expiry=q('#expiry').value, cvc=q('#cvc').value, name=q('#nameOnCard').value.trim();
+      if(card.length<12) return showMessage("Digite um número de cartão válido.");
+      if(!/^\d{2}\/\d{2}$/.test(expiry)) return showMessage("Digite a validade no formato MM/AA.");
+      if(cvc.length<3) return showMessage("Digite o CVC.");
+      if(!name) return showMessage("Digite o nome impresso no cartão.");
 
-    function closeOverlay(){
-      overlay.classList.remove('open');
-      overlay.setAttribute('aria-hidden','true');
+      payBtn.disabled=true; payBtn.textContent="Processando...";
+      setTimeout(()=>{
+        payBtn.disabled=false;
+        payBtn.textContent=`Pague R$ ${computeTotal().toFixed(2).replace('.',',')}`;
+        overlay.classList.remove('open');
+        showMessage("Sua doação inspira a história! Obrigada.");
+      },1200);
+    };
+
+    // modal de mensagem custom
+    const msgOverlay=q('#msgOverlay'), msgText=q('#msgText'), msgOkBtn=q('#msgOkBtn');
+    function showMessage(txt){
+      msgText.textContent=txt;
+      msgOverlay.classList.add('open');
     }
+    msgOkBtn.onclick=()=>msgOverlay.classList.remove('open');
 
-    // ===== pay button (simula validação) =====
-    payBtn.addEventListener('click', () => {
-      const card = q('#cardNumber').value.replace(/\s+/g,'');
-      const expiry = q('#expiry').value;
-      const cvc = q('#cvc').value;
-      const name = q('#nameOnCard').value.trim();
+    // preview resumo
+    q('#previewBtn').onclick=()=>{ updateAmountTexts(); showMessage("Resumo: "+q('#amountNote').textContent); };
 
-      // validações simples
-      if (!card || card.length < 12) { alert('Digite um número de cartão válido.'); q('#cardNumber').focus(); return; }
-      if (!expiry || !/^\d{2}\/\d{2}$/.test(expiry)) { alert('Digite a validade no formato MM/AA.'); q('#expiry').focus(); return; }
-      if (!cvc || cvc.length < 3) { alert('Digite o CVC.'); q('#cvc').focus(); return; }
-      if (!name) { alert('Digite o nome impresso no cartão.'); q('#nameOnCard').focus(); return; }
-
-      // simula processamento e exibe agradecimento
-      payBtn.disabled = true;
-      payBtn.textContent = 'Processando...';
-      setTimeout(()=> {
-        payBtn.disabled = false;
-        payBtn.textContent = `Pague R$ ${computeTotal().toFixed(2).replace('.',',')}`;
-        closeOverlay();
-        alert('Sua doação inspira a história! Obrigado .');
-      }, 1200);
-    });
-
-    // preview button atualiza total
-    q('#previewBtn').addEventListener('click', () => {
-      updateAmountTexts();
-      alert('Resumo: ' + q('#amountNote').textContent);
-    });
-
-    // inicializa valor selecionado
-    updateSelected(selectedValue);
-    updateAmountTexts();
+    updateSelected(25);
   </script>
 </body>
 </html>
