@@ -111,20 +111,39 @@
     const cardWidth = 330; // largura + margem do card
     const totalCards = document.querySelectorAll('.card').length;
 
+    function moveCarousel() {
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+
     nextBtn.addEventListener('click', () => {
-      if (index < totalCards - 3) { // mostra 3 por vez
+      if (index < totalCards - 3) {
         index++;
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
+      } else {
+        index = 0; // volta ao início
       }
+      moveCarousel();
     });
 
     prevBtn.addEventListener('click', () => {
       if (index > 0) {
         index--;
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
+      } else {
+        index = totalCards - 3; // vai para o final
       }
+      moveCarousel();
     });
+
+    // Auto play
+    setInterval(() => {
+      if (index < totalCards - 3) {
+        index++;
+      } else {
+        index = 0;
+      }
+      moveCarousel();
+    }, 5000); // muda a cada 5 segundos
   </script>
+
 
 </body>
 </html>
