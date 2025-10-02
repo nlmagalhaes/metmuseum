@@ -41,17 +41,19 @@ nav ul li a:hover {
   color: #c19a6b;
 }
 
-/* Hero */
 .hero {
-  background: url("images/banner.jpg") center/cover no-repeat;
-  height: 60vh;
+  background-image: url("images/hero-bg.jpg");
+  background-size: cover;      /* cobre toda a área */
+  background-position: center; /* centraliza a imagem */
+  background-repeat: no-repeat; /* evita repetição */
+  height: 60vh;                /* altura de 80% da tela */
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: white;                /* texto branco para contraste */
   text-align: center;
-  position: relative;
 }
+
 
 .hero::after {
   content: "";
