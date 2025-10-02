@@ -41,26 +41,36 @@ nav ul li a:hover {
   color: #c19a6b;
 }
 
-/* Hero */
 .hero {
-  position: relative; /* necessário pro overlay funcionar */
+  position: relative; /* dá referência pro ::after */
   background-image: url("images/hero-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 60vh;   /* altura do hero */
+  height: 60vh;   /* altura da área cinza */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: white; /* texto branco pro contraste */
 }
 
 .hero::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4); /* overlay escuro */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* cobre só a altura do hero */
+  background: rgba(0,0,0,0.4); /* overlay */
 }
+
+.hero-text {
+  position: relative; /* mantém texto acima do overlay */
+  z-index: 1;
+  max-width: 700px;
+}
+
 
 .hero-text {
   position: relative;
