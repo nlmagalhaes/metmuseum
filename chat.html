@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Athena Culture - Museu</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -29,16 +29,15 @@
     </div>
   </section>
 
-  <!-- Exposições / Carrossel -->
+  <!-- Exposições -->
   <section class="exposicoes">
     <h2>Agora em Exibição</h2>
 
-    <!-- wrapper permite que os botões fiquem fora da área "clipada" -->
     <div class="carousel-wrapper">
-
-      <!-- área que corta os cards (viewport do carrossel) -->
+      <button class="carousel-btn left">&#10094;</button>
       <div class="carousel-container">
         <div class="carousel-track">
+          
           <!-- Card 1 -->
           <div class="card">
             <img src="images/expo1.png" alt="Jennie C. Jones Ensemble">
@@ -48,7 +47,7 @@
 
           <!-- Card 2 -->
           <div class="card">
-            <img src="images/expo2.png" alt="Superfine">
+            <img src="images/expo2.png" alt="Superfine: Tailoring Black Style">
             <h3>Superfine: Tailoring Black Style</h3>
             <p class="data-expo">Até 26 de outubro</p>
           </div>
@@ -60,44 +59,42 @@
             <p class="data-expo">Até 19 de outubro</p>
           </div>
 
-          <!-- Card 4 (nova imagem que você adicionou) -->
+          <!-- Card 4 -->
           <div class="card">
             <img src="images/expo4.png" alt="Exposição 4">
-            <h3>Arte & Identidade</h3>
-            <p class="data-expo">Até 5 de novembro</p>
+            <h3>Love Stories</h3>
+            <p class="data-expo">Até 30 de outubro</p>
           </div>
 
           <!-- Card 5 -->
           <div class="card">
             <img src="images/expo5.png" alt="Exposição 5">
-            <h3>Classicismo Moderno</h3>
+            <h3>Histórias da Arte</h3>
             <p class="data-expo">Até 12 de novembro</p>
           </div>
 
           <!-- Card 6 -->
           <div class="card">
             <img src="images/expo6.png" alt="Exposição 6">
-            <h3>Visões Futuristas</h3>
+            <h3>Modernismo em Foco</h3>
             <p class="data-expo">Até 20 de novembro</p>
           </div>
-        </div> <!-- .carousel-track -->
-      </div> <!-- .carousel-container -->
 
-      <!-- botões ficam fora da .carousel-container, mas dentro do wrapper (overflow: visible) -->
-      <button class="carousel-btn left" aria-label="Anterior">&lsaquo;</button>
-      <button class="carousel-btn right" aria-label="Próximo">&rsaquo;</button>
-    </div> <!-- .carousel-wrapper -->
-
+        </div>
+      </div>
+      <button class="carousel-btn right">&#10095;</button>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Athena Culture | Todos os direitos reservados</p>
+
+    <!-- Embedded Messaging atualizado -->
     <script type='text/javascript'>
       function initEmbeddedMessaging() {
         try {
-          embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-
+          embeddedservice_bootstrap.settings.language = 'en_US';
           embeddedservice_bootstrap.init(
             '00DKY00000NRyu9',
             'Met_Museum_Site',
@@ -114,7 +111,6 @@
     <script type='text/javascript' src='https://trailsignup-0947c9037edb1f.my.site.com/ESWMetMuseumSite1759374486831/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
   </footer>
 
-  <!-- script do carrossel -->
   <script src="script.js"></script>
 </body>
 </html>
