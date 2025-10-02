@@ -119,11 +119,18 @@ nav ul li a:hover {
 }
 
 .card h3 {
-  padding: 15px;
+  padding: 15px 15px 5px;
   font-size: 18px;
   color: #333;
 }
 
+.data-expo {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+/* Efeito hover */
 .card:hover {
   transform: translateY(-8px);
 }
