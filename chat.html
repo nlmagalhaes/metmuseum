@@ -1,26 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Athena Culture - Museu</title>
-  <title>Met Museum - Chat</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Fonte Playfair Display para dar toque artístico -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- Header -->
   <header>
-    <div class="logo">Met Museum</div>
+    <div class="logo">Athena Culture</div>
     <nav>
-@@ -24,96 +21,76 @@
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Coleções & Obras</a></li>
+        <li><a href="#">Agenda Cultural</a></li>
+        <li><a href="#">Área do Visitante</a></li>
+        <li><a href="#">Faça uma Doação</a></li>
+      </ul>
     </nav>
   </header>
 
   <!-- Hero -->
   <section class="hero">
     <div class="hero-text">
-      <h1>Bem-vindo(a) ao Met Museum</h1>
+      <h1>Bem Vindo(a) ao Met Museum</h1>
       <p>Descubra o mundo das artes! Explore coleções, eventos e exposições do Met Museum de forma interativa e personalizada.</p>
     </div>
   </section>
@@ -28,148 +33,44 @@
   <!-- Exposições -->
   <section class="exposicoes">
     <h2>Agora em Exibição</h2>
-
-    <div class="carousel-wrapper">
-      <button class="carousel-btn left">&#10094;</button>
-      <div class="carousel-container">
-        <div class="carousel-track">
-          
-          <!-- Card 1 -->
-          <div class="card">
-            <img src="images/expo1.png" alt="Jennie C. Jones Ensemble">
-            <h3>Conjunto Jennie C. Jones</h3>
-            <p class="data-expo">Até 19 de outubro</p>
-          </div>
-  <main>
-    <section id="chat">
-      <h2>Fale Conosco</h2>
-      <div id="chat-box"></div>
-      <input type="text" id="user-input" placeholder="Digite sua mensagem...">
-      <button id="send-btn">Enviar</button>
-    </section>
-
-          <!-- Card 2 -->
-          <div class="card">
-            <img src="images/expo2.png" alt="Superfine: Tailoring Black Style">
-            <h3>Superfine: Tailoring Black Style</h3>
-            <p class="data-expo">Até 26 de outubro</p>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="card">
-            <img src="images/expo3.png" alt="Espírito da Criatividade">
-            <h3>Espírito da Criatividade</h3>
-            <p class="data-expo">Até 19 de outubro</p>
-          </div>
-    <section id="locations">
-      <h2>Nossos Locais</h2>
-      <div class="location">
-        <img src="images/met-fifth.jpg" alt="The Met Fifth Avenue">
-        <h3>The Met Fifth Avenue</h3>
-        <p><strong>Horário:</strong> 10h – 17h (Terça a Domingo)</p>
-        <p><strong>Endereço:</strong> 1000 Fifth Avenue, Nova York, NY 10028</p>
+    <div class="cards">
+      <div class="card">
+        <img src="images/expo1.png" alt="Exposição 1">
+        <h3>Jennie C. Jones Ensemble</h3>
       </div>
-      <div class="location">
-        <img src="images/met-cloisters.jpg" alt="The Met Cloisters">
-        <h3>The Met Cloisters</h3>
-        <p><strong>Horário:</strong> 10h – 17h (Quinta a Terça)</p>
-        <p><strong>Endereço:</strong> 99 Margaret Corbin Drive, Fort Tryon Park, Nova York, NY 10040</p>
+      <div class="card">
+        <img src="images/expo2.png" alt="Exposição 2">
+        <h3>Arte Contemporânea</h3>
       </div>
-    </section>
-  </main>
-
-          <!-- Card 4 -->
-          <div class="card">
-            <img src="images/expo4.png" alt="Notas de Origem">
-            <h3>Notas de Origem</h3>
-            <p class="data-expo">Até 30 de outubro</p>
-          </div>
-  <footer>
-    <p>© 2025 Athena Culture | Todos os direitos reservados</p>
-  </footer>
-
-          <!-- Card 5 -->
-          <div class="card">
-            <img src="images/expo5.png" alt="Alegoria e Abstração">
-            <h3>Alegoria e Abstração</h3>
-            <p class="data-expo">Até 12 de novembro</p>
-          </div>
-  <!-- Modal de mensagens -->
-  <div class="overlay" id="msgOverlay" aria-hidden="true">
-    <div class="modal small" role="alertdialog" aria-modal="true" aria-labelledby="msgText">
-      <div class="close-x" id="msgClose">✕</div>
-      <p id="msgText"></p>
-      <button class="btn-primary" id="msgOk">OK</button>
-    </div>
-  </div>
-
-          <!-- Card 6 -->
-          <div class="card">
-            <img src="images/expo6.png" alt="Ganesha: Senhor dos Começos">
-            <h3>Ganesha: Senhor dos Começos</h3>
-            <p class="data-expo">Até 20 de novembro</p>
-          </div>
-  <script>
-    // função para exibir mensagens no lugar do alert()
-    function showMessage(text) {
-      const overlay = document.getElementById("msgOverlay");
-      const msgText = document.getElementById("msgText");
-      const okBtn = document.getElementById("msgOk");
-      const closeBtn = document.getElementById("msgClose");
-
-        </div>
+      <div class="card">
+        <img src="images/expo3.png" alt="Exposição 3">
+        <h3>Retratos Clássicos</h3>
       </div>
-      <button class="carousel-btn right">&#10095;</button>
     </div>
   </section>
-      msgText.textContent = text;
-      overlay.classList.add("open");
-      overlay.setAttribute("aria-hidden","false");
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Athena Culture | Todos os direitos reservados</p>
-      function close() {
-        overlay.classList.remove("open");
-        overlay.setAttribute("aria-hidden","true");
-      }
-
-    <!-- Embedded Messaging Salesforce -->
     <script type='text/javascript'>
-      function initEmbeddedMessaging() {
+    function initEmbeddedMessaging() {
         try {
-          embeddedservice_bootstrap.settings.language = 'pt_BR';
-          embeddedservice_bootstrap.init(
-            '00DKY00000NRyu9',
-            'Met_Museum_Site',
-            'https://trailsignup-0947c9037edb1f.my.site.com/ESWMetMuseumSite1759374486831',
-            {
-              scrt2URL: 'https://trailsignup-0947c9037edb1f.my.salesforce-scrt.com'
-            }
-          );
+            embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+            embeddedservice_bootstrap.init(
+                '00DKY00000NRyu9',
+                'Athena_Site',
+                'https://trailsignup-0947c9037edb1f.my.site.com/ESWAthenaSite1759338989207',
+                {
+                    scrt2URL: 'https://trailsignup-0947c9037edb1f.my.salesforce-scrt.com'
+                }
+            );
         } catch (err) {
-          console.error('Error loading Embedded Messaging: ', err);
+            console.error('Error loading Embedded Messaging: ', err);
         }
-      };
+    };
     </script>
-    <script type='text/javascript' src='https://trailsignup-0947c9037edb1f.my.site.com/ESWMetMuseumSite1759374486831/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+    <script type='text/javascript' src='https://trailsignup-0947c9037edb1f.my.site.com/ESWAthenaSite1759338989207/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
   </footer>
-      okBtn.onclick = close;
-      closeBtn.onclick = close;
-      overlay.onclick = (e) => { if (e.target === overlay) close(); };
-    }
 
-  <script src="script.js"></script>
-    // exemplo no botão enviar (substitui alert())
-    document.getElementById("send-btn").addEventListener("click", () => {
-      const input = document.getElementById("user-input");
-      if (input.value.trim() === "") {
-        showMessage("Digite uma mensagem antes de enviar.");
-      } else {
-        showMessage("Mensagem enviada com sucesso!");
-        input.value = "";
-      }
-    });
-  </script>
 </body>
 </html>
