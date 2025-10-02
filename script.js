@@ -22,5 +22,8 @@ btnLeft.addEventListener('click', () => {
 
 function updateCarousel() {
   const cardWidth = document.querySelector('.card').offsetWidth + 30;
-  track.style.transform = `translateX(-${index * cardWidth}px)`;
+  track.scrollTo({
+    left: index * cardWidth,
+    behavior: 'smooth'
+  });
 }
