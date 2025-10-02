@@ -108,6 +108,14 @@ nav ul li a:hover {
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  overflow-x: auto;           /* permite rolar no touch */
+  scroll-behavior: smooth;    /* deslize suave */
+  -ms-overflow-style: none;   /* esconde barra no IE */
+  scrollbar-width: none;      /* esconde barra no Firefox */
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;              /* esconde barra no Chrome/Safari */
 }
 
 .card {
@@ -158,16 +166,17 @@ nav ul li a:hover {
 }
 
 .carousel-btn.left {
-  left: 10px;
+  left: -50px;  /* afastado da imagem */
 }
 
 .carousel-btn.right {
-  right: 10px;
+  right: -50px; /* afastado da imagem */
 }
 
 .carousel-btn:hover {
   background: rgba(0,0,0,0.7);
 }
+
 
 /* Footer */
 footer {
