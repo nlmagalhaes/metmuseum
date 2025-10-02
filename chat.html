@@ -8,11 +8,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <div class="logo">Met Museum</div>
     <nav>
       <ul>
-        <li><a href="chat.html">Início</a></li>
+        <li><a href="index.html">Início</a></li>
         <li><a href="#">Coleções & Obras</a></li>
         <li><a href="#">Agenda Cultural</a></li>
         <li><a href="#">Área do Visitante</a></li>
@@ -21,6 +23,7 @@
     </nav>
   </header>
 
+  <!-- Chat -->
   <main>
     <section id="chat">
       <h2>Fale Conosco</h2>
@@ -29,6 +32,7 @@
       <button id="send-btn">Enviar</button>
     </section>
 
+    <!-- Locations -->
     <section id="locations">
       <h2>Nossos Locais</h2>
       <div class="location">
@@ -46,51 +50,11 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 Athena Culture | Todos os direitos reservados</p>
   </footer>
 
-  <!-- Modal de mensagens -->
-  <div class="overlay" id="msgOverlay" aria-hidden="true">
-    <div class="modal small" role="alertdialog" aria-modal="true" aria-labelledby="msgText">
-      <div class="close-x" id="msgClose">✕</div>
-      <p id="msgText"></p>
-      <button class="btn-primary" id="msgOk">OK</button>
-    </div>
-  </div>
-
-  <script>
-    // função para exibir mensagens no lugar do alert()
-    function showMessage(text) {
-      const overlay = document.getElementById("msgOverlay");
-      const msgText = document.getElementById("msgText");
-      const okBtn = document.getElementById("msgOk");
-      const closeBtn = document.getElementById("msgClose");
-
-      msgText.textContent = text;
-      overlay.classList.add("open");
-      overlay.setAttribute("aria-hidden","false");
-
-      function close() {
-        overlay.classList.remove("open");
-        overlay.setAttribute("aria-hidden","true");
-      }
-
-      okBtn.onclick = close;
-      closeBtn.onclick = close;
-      overlay.onclick = (e) => { if (e.target === overlay) close(); };
-    }
-
-    // exemplo no botão enviar (substitui alert())
-    document.getElementById("send-btn").addEventListener("click", () => {
-      const input = document.getElementById("user-input");
-      if (input.value.trim() === "") {
-        showMessage("Digite uma mensagem antes de enviar.");
-      } else {
-        showMessage("Mensagem enviada com sucesso!");
-        input.value = "";
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
