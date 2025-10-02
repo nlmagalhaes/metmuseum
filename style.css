@@ -6,22 +6,23 @@
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background: #c62828; /* vermelho elegante */
-  border-bottom: 1px solid #a32222;
+  background: linear-gradient(90deg, #8B0000, #B22222); /* vermelho elegante */
+  border-bottom: 1px solid #660000;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.logo {
+header .logo {
   font-size: 20px;
   font-weight: bold;
-  color: #444;
+  color: #ffffff;
 }
 
 nav ul {
@@ -32,12 +33,13 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #c19a6b;
+  color: #ffd700; /* dourado elegante no hover */
 }
 
 /* Hero */
@@ -182,12 +184,12 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-  background-color: #0a2342;   /* azul escuro elegante */
+  background-color: #8B0000;   /* vermelho escuro elegante */
   text-align: center;
   padding: 20px 10px;
   font-size: 14px;
   color: #ffffff;
-  border-top: 1px solid #081a31;
+  border-top: 1px solid #660000;
 }
 
 /* Responsividade */
