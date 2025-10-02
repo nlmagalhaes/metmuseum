@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Athena Culture - Museu</title>
 
-  <!-- Fonte The Met (Georgia serif parecida com o oficial) -->
+  <!-- Fonte parecida com a oficial do Met -->
   <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- CSS principal -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -53,4 +53,69 @@
           <!-- Card 2 -->
           <div class="card">
             <img src="images/expo2.png" alt="Superfine: Tailoring Black Style">
-            <h3>Superfine: Tailoring
+            <h3>Superfine: Tailoring Black Style</h3>
+            <p class="data-expo">Até 26 de outubro</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <img src="images/expo3.png" alt="Espírito da Criatividade">
+            <h3>Espírito da Criatividade</h3>
+            <p class="data-expo">Até 19 de outubro</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card">
+            <img src="images/expo4.png" alt="Exposição 4">
+            <h3>Love Stories</h3>
+            <p class="data-expo">Até 30 de outubro</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card">
+            <img src="images/expo5.png" alt="Exposição 5">
+            <h3>Histórias da Arte</h3>
+            <p class="data-expo">Até 12 de novembro</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="card">
+            <img src="images/expo6.png" alt="Exposição 6">
+            <h3>Modernismo em Foco</h3>
+            <p class="data-expo">Até 20 de novembro</p>
+          </div>
+
+        </div>
+      </div>
+      <button class="carousel-btn right">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Athena Culture | Todos os direitos reservados</p>
+
+    <!-- Embedded Messaging -->
+    <script type='text/javascript'>
+      function initEmbeddedMessaging() {
+        try {
+          embeddedservice_bootstrap.settings.language = 'en_US';
+          embeddedservice_bootstrap.init(
+            '00DKY00000NRyu9',
+            'Met_Museum_Site',
+            'https://trailsignup-0947c9037edb1f.my.site.com/ESWMetMuseumSite1759374486831',
+            {
+              scrt2URL: 'https://trailsignup-0947c9037edb1f.my.salesforce-scrt.com'
+            }
+          );
+        } catch (err) {
+          console.error('Error loading Embedded Messaging: ', err);
+        }
+      };
+    </script>
+    <script type='text/javascript' src='https://trailsignup-0947c9037edb1f.my.site.com/ESWMetMuseumSite1759374486831/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
