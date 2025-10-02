@@ -1,208 +1,267 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+/* ===== Base ===== */
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #fafafa;
+  color: #222;
+  line-height: 1.5;
 }
 
-/* Header */
+/* ===== Header ===== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background: linear-gradient(90deg, #8B0000, #B22222); /* vermelho elegante */
+  padding: 18px 40px;
+  background: linear-gradient(90deg, #8B0000, #B22222); /* Vermelho elegante */
   border-bottom: 1px solid #660000;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
-
 header .logo {
-  font-size: 20px;
-  font-weight: bold;
-  color: #ffffff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-family: 'Playfair Display', serif;
 }
-
-nav ul {
+header nav ul {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 22px;
 }
-
-nav ul li a {
+header nav ul li a {
+  color: #fff;
   text-decoration: none;
-  color: #ffffff;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.2s;
+}
+header nav ul li a:hover {
+  color: #ffd700;
 }
 
-nav ul li a:hover {
-  color: #ffd700; /* dourado elegante no hover */
-}
-
-/* Hero */
+/* ===== Hero ===== */
 .hero {
-  position: relative;
-  background-image: url("images/hero-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 60vh;
+  background: url('images/expo6.png') center/cover no-repeat;
+  height: 70vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
   color: white;
-  overflow: hidden;
+  position: relative;
 }
-
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 0;
+  background: rgba(0,0,0,0.55);
 }
-
 .hero-text {
   position: relative;
-  z-index: 1;
-  max-width: 700px;
-  color: white;
+  z-index: 2;
+  max-width: 750px;
 }
-
 .hero-text h1 {
-  font-size: 48px;
-  margin-bottom: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin-bottom: 16px;
 }
-
 .hero-text p {
-  font-size: 18px;
+  font-size: 1.2rem;
   line-height: 1.6;
 }
 
-/* Exposições */
+/* ===== Exposições ===== */
 .exposicoes {
-  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
   text-align: center;
 }
-
 .exposicoes h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 25px;
 }
-
-/* CARROSSEL */
 .carousel-wrapper {
   position: relative;
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  overflow: visible;
+  overflow: hidden;
 }
-
 .carousel-container {
   overflow: hidden;
-  padding: 10px 0;
 }
-
 .carousel-track {
   display: flex;
-  gap: 30px;
-  padding: 6px 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  gap: 20px;
+  transition: transform 0.4s ease-in-out;
 }
-.carousel-track::-webkit-scrollbar { display: none; }
-
-/* Card */
 .card {
-  min-width: 300px;
-  flex: 0 0 auto;
+  min-width: 250px;
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  overflow: hidden;
-  transition: transform 0.25s ease;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
 }
-
 .card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
-
 .card h3 {
-  padding: 12px 15px 6px;
-  font-size: 18px;
-  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
 }
-
-.data-expo {
-  font-size: 14px;
+.card .data-expo {
   color: #666;
-  padding: 0 15px 16px;
+  font-size: 0.9rem;
 }
-
-.card:hover { transform: translateY(-6px); }
-
-/* Botões */
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.55);
-  border: none;
+  background: rgba(0,0,0,0.5);
   color: #fff;
-  font-size: 26px;
-  padding: 10px 14px;
+  border: none;
+  padding: 12px;
   cursor: pointer;
   border-radius: 50%;
-  z-index: 3;
+}
+.carousel-btn.left { left: 10px; }
+.carousel-btn.right { right: 10px; }
+.carousel-btn:hover { background: rgba(0,0,0,0.7); }
+
+/* ===== Chat Section ===== */
+#chat {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+#chat h2 { font-family: 'Playfair Display', serif; margin-bottom: 12px; }
+#chat-box {
+  min-height: 200px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 6px;
+}
+#user-input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+#send-btn {
+  padding: 10px 16px;
+  margin-left: 8px;
+  background: #c8102e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#send-btn:hover { background: #a50e24; }
+
+/* ===== Locations Section ===== */
+#locations {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+#locations h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.location {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.location img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background: #111;
+  color: #eee;
+  font-size: 0.9rem;
+}
+
+/* ===== Modal de mensagens ===== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+.overlay.open { display: flex; }
+
+.modal {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  position: relative;
+  text-align: center;
+}
+.modal.small { max-width: 350px; }
+.modal p {
+  margin-bottom: 14px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* botão de fechar no canto */
+.close-x {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  background: #f3f3f3;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  color: #444;
+}
+.close-x:hover {
+  background: #e0e0e0;
 }
 
-.carousel-btn.left {
-  left: -46px;
+/* botão de ação dentro do modal */
+.btn-primary {
+  background: #c8102e;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.2s ease-in-out;
 }
-
-.carousel-btn.right {
-  right: -46px;
-}
-
-.carousel-btn:hover {
-  background: rgba(0,0,0,0.75);
-}
-
-/* Footer */
-footer {
-  background-color: #8B0000;   /* vermelho escuro elegante */
-  text-align: center;
-  padding: 20px 10px;
-  font-size: 14px;
-  color: #ffffff;
-  border-top: 1px solid #660000;
-}
-
-/* Responsividade */
-@media (max-width: 1000px) {
-  .carousel-btn.left { left: -38px; }
-  .carousel-btn.right { right: -38px; }
-  .card { min-width: 260px; }
-}
-
-@media (max-width: 700px) {
-  header { padding: 12px 16px; }
-  .hero-text h1 { font-size: 28px; }
-  .hero { height: 40vh; }
-  .carousel-btn { display: none; }
-  .card { min-width: 86%; margin-left: 7%; margin-right: 7%; }
+.btn-primary:hover {
+  background: #a50e24;
 }
