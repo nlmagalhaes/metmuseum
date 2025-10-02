@@ -1,9 +1,5 @@
 /* ===== Base ===== */
-* { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   background: #fafafa;
@@ -17,7 +13,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 18px 40px;
-  background: linear-gradient(90deg, #8B0000, #B22222); /* Vermelho elegante */
+  background: linear-gradient(90deg, #8B0000, #B22222);
   border-bottom: 1px solid #660000;
   position: sticky;
   top: 0;
@@ -27,7 +23,6 @@ header .logo {
   color: #fff;
   font-weight: 700;
   font-size: 1.2rem;
-  font-family: 'Playfair Display', serif;
 }
 header nav ul {
   list-style: none;
@@ -38,102 +33,10 @@ header nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
 }
 header nav ul li a:hover {
   color: #ffd700;
 }
-
-/* ===== Hero ===== */
-.hero {
-  background: url('images/expo6.png') center/cover no-repeat;
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  position: relative;
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-}
-.hero-text {
-  position: relative;
-  z-index: 2;
-  max-width: 750px;
-}
-.hero-text h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
-  margin-bottom: 16px;
-}
-.hero-text p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-/* ===== Exposições ===== */
-.exposicoes {
-  max-width: 1100px;
-  margin: 50px auto;
-  padding: 0 20px;
-  text-align: center;
-}
-.exposicoes h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 25px;
-}
-.carousel-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-.carousel-container {
-  overflow: hidden;
-}
-.carousel-track {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.4s ease-in-out;
-}
-.card {
-  min-width: 250px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  padding: 15px;
-  text-align: center;
-}
-.card img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-.card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-}
-.card .data-expo {
-  color: #666;
-  font-size: 0.9rem;
-}
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  border: none;
-  padding: 12px;
-  cursor: pointer;
-  border-radius: 50%;
-}
-.carousel-btn.left { left: 10px; }
-.carousel-btn.right { right: 10px; }
-.carousel-btn:hover { background: rgba(0,0,0,0.7); }
 
 /* ===== Chat Section ===== */
 #chat {
@@ -144,7 +47,11 @@ header nav ul li a:hover {
   border-radius: 8px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
-#chat h2 { font-family: 'Playfair Display', serif; margin-bottom: 12px; }
+#chat h2 { 
+  font-family: 'Playfair Display', serif; 
+  margin-bottom: 12px; 
+  text-align: center;
+}
 #chat-box {
   min-height: 200px;
   background: #f5f5f5;
@@ -199,69 +106,4 @@ footer {
   background: #111;
   color: #eee;
   font-size: 0.9rem;
-}
-
-/* ===== Modal de mensagens ===== */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  padding: 20px;
-}
-.overlay.open { display: flex; }
-
-.modal {
-  width: 100%;
-  max-width: 400px;
-  background: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
-  position: relative;
-  text-align: center;
-}
-.modal.small { max-width: 350px; }
-.modal p {
-  margin-bottom: 14px;
-  font-size: 1rem;
-  color: #333;
-}
-
-/* botão de fechar no canto */
-.close-x {
-  position: absolute;
-  right: 12px;
-  top: 10px;
-  background: #f3f3f3;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  cursor: pointer;
-  font-weight: bold;
-  color: #444;
-}
-.close-x:hover {
-  background: #e0e0e0;
-}
-
-/* botão de ação dentro do modal */
-.btn-primary {
-  background: #c8102e;
-  color: #fff;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 700;
-  transition: background 0.2s ease-in-out;
-}
-.btn-primary:hover {
-  background: #a50e24;
 }
