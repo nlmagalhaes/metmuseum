@@ -163,8 +163,9 @@
     <section class="donation-hero" aria-labelledby="doe-title">
       <div class="donation-text">
         <h1 id="doe-title">Doe para o Met</h1>
-        <p>Seu apoio ajuda a manter exposições, conservação e programas educativos. Escolha um valor sugerido ou digite um valor customizado.</p>
-        <p>Você será direcionado para preencher os dados do cartão em um formulário seguro (simulação nesta versão).</p>
+        <p>Seu apoio ajuda a manter o extraordinário nível de programação, conservação e pesquisa do Museu, permitindo que milhões de visitantes vivenciem o poder da arte.
+           Sua doação hoje desempenha um papel vital no futuro do Met, e não poderíamos ser mais gratos. Obrigado.</p>
+        <p>Você será direcionado para preencher os dados do cartão em um formulário seguro.</p>
       </div>
 
       <aside class="donation-panel" aria-label="Painel de doação">
@@ -197,7 +198,7 @@
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <div class="close-x" id="closeModal" title="Fechar">✕</div>
       <h3 id="modalTitle">Informações de pagamento</h3>
-      <p class="small">Antes de prosseguir, verifique se o endereço abaixo corresponde ao endereço de cobrança do seu cartão.</p>
+      <p class="small">Insira abaixo os dados do seu cartão.</p>
 
       <div class="form-row">
         <input id="cardNumber" placeholder="Número do cartão" type="text" inputmode="numeric" maxlength="19">
@@ -215,7 +216,7 @@
       <div class="note" id="amountNote">Total: R$ 25</div>
 
       <button class="pay-btn" id="payBtn">Pague R$ 25</button>
-      <div class="note">* Esta é uma simulação. Não serão processados pagamentos reais nesta versão.</div>
+      <div class="note">* Antes de prosseguir, verifique se os dados inseridos correspondem aos do seu cartão.</div>
     </div>
   </div>
 
@@ -309,7 +310,7 @@
         payBtn.disabled = false;
         payBtn.textContent = `Pague R$ ${computeTotal().toFixed(2).replace('.',',')}`;
         closeOverlay();
-        alert('Obrigado! Sua doação foi registrada (simulação).');
+        alert('Sua doação inspira a história! Obrigado .');
       }, 1200);
     });
 
