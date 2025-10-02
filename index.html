@@ -2,10 +2,83 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=chat.html">
-  <title>Athena Culture</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athena Culture - Museu</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <p>Redirecionando para <a href="chat.html">chat.html</a>...</p>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Met Museum</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="#">Coleções & Obras</a></li>
+        <li><a href="#">Agenda Cultural</a></li>
+        <li><a href="#">Área do Visitante</a></li>
+        <li><a href="doacao.html">Faça uma doação</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Bem-vindo(a) ao Met Museum</h1>
+      <p>Descubra o mundo das artes! Explore coleções, eventos e exposições do Met Museum de forma interativa e personalizada.</p>
+    </div>
+  </section>
+
+  <!-- Exposições -->
+  <section class="exposicoes">
+    <h2>Agora em Exibição</h2>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn left">&#10094;</button>
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="card">
+            <img src="images/expo1.png" alt="Jennie C. Jones Ensemble">
+            <h3>Conjunto Jennie C. Jones</h3>
+            <p class="data-expo">Até 19 de outubro</p>
+          </div>
+          <div class="card">
+            <img src="images/expo2.png" alt="Superfine: Tailoring Black Style">
+            <h3>Superfine: Tailoring Black Style</h3>
+            <p class="data-expo">Até 26 de outubro</p>
+          </div>
+          <div class="card">
+            <img src="images/expo3.png" alt="Espírito da Criatividade">
+            <h3>Espírito da Criatividade</h3>
+            <p class="data-expo">Até 19 de outubro</p>
+          </div>
+          <div class="card">
+            <img src="images/expo4.png" alt="Love Stories">
+            <h3>Notas de Origem</h3>
+            <p class="data-expo">Até 30 de outubro</p>
+          </div>
+          <div class="card">
+            <img src="images/expo5.png" alt="Histórias da Arte">
+            <h3>Alegoria e Abstração</h3>
+            <p class="data-expo">Até 12 de novembro</p>
+          </div>
+          <div class="card">
+            <img src="images/expo6.png" alt="Modernismo em Foco">
+            <h3>Ganesha: Senhor dos Começos</h3>
+            <p class="data-expo">Até 20 de novembro</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn right">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Athena Culture | Todos os direitos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
