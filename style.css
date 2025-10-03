@@ -1,118 +1,199 @@
-/* ===== Base ===== */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background: #fafafa;
-  color: #222;
-  line-height: 1.5;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* ===== Header ===== */
+/* Para garantir que o footer fique no fim da tela */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER */
 header {
+  background-color: #8B0000; /* vermelho escuro elegante (Dark Red) */
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 40px;
-  background: linear-gradient(90deg, #8B0000, #B22222);
-  border-bottom: 1px solid #660000;
+  padding: 15px 40px;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
+
 header .logo {
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white; /* garante que o logo fique branco */
 }
+
 header nav ul {
   list-style: none;
   display: flex;
-  gap: 22px;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
 }
+
 header nav ul li a {
-  color: #fff;
+  color: white; /* links brancos */
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
+
 header nav ul li a:hover {
-  color: #ffd700;
+  color: #FFD700; /* dourado no hover */
 }
 
-/* ===== Chat Section ===== */
-#chat {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  text-align: center;
-}
-#chat h2 { 
-  font-family: 'Playfair Display', serif; 
-  margin-bottom: 20px; 
-}
-#chat-box {
-  min-height: 220px;
-  background: #f5f5f5;
-  border: 1px solid #ddd;
-  margin-bottom: 15px;
-  padding: 12px;
-  border-radius: 8px;
-  text-align: left;
-  overflow-y: auto;
-}
-#user-input {
-  width: 70%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-#send-btn {
-  padding: 10px 18px;
-  margin-left: 8px;
-  background: #c8102e;
+/* HERO */
+.hero {
+  background: url("images/hero-bg.jpg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
+  text-align: center;
+  position: relative;
 }
-#send-btn:hover { background: #a50e24; }
 
-/* ===== Locations Section ===== */
-#locations {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 20px;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
 }
-#locations h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 25px;
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Exposições */
+.exposicoes {
+  padding: 60px;
   text-align: center;
 }
-.location {
+
+.exposicoes h2 {
+  font-size: 32px;
   margin-bottom: 40px;
-  text-align: center;
-}
-.location img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-bottom: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-.location h3 {
-  font-weight: bold;
-  margin-bottom: 6px;
 }
 
-/* ===== Footer ===== */
+/* ===== CARROSSEL ===== */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0px 40px; /* espaço para setas */
+  box-sizing: border-box;
+
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* Cards */
+.card {
+  flex: 0 0 calc(30% - 20px); /* 3 cards por vez */
+  margin: 0px 25px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.data-expo {
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+  padding: 0 15px 20px;
+  display: block;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* Botões do carrossel */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ccc; /* cinza claro */
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 30px;
+  z-index: 1000;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.carousel-btn:hover {
+  background: #999;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+  left: 15px;
+}
+
+.carousel-btn.next {
+  right: 15px;
+}
+
+/* Main container para páginas internas */
+main.container {
+  flex: 1;
+}
+
+/* Footer */
 footer {
+  background: #8B0000;
+  color: #fff;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
-  background: #111;
-  color: #eee;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  margin-top: auto;
 }
